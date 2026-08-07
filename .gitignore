@@ -1,0 +1,32 @@
+# Segredos / configuração local
+.env
+.env.*
+!.env.example
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editores / SO
+.vscode/
+.DS_Store
+
+# Configuração local de ferramentas de IA
+.claude/
+
+# Alembic (versionamos as migrations, não caches locais)
