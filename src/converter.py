@@ -55,4 +55,5 @@ async def async_converter(from_currency: str, to_currency: str, price: float):
 
     exchange_rate = float(data["Realtime Currency Exchange Rate"]["5. Exchange Rate"]) # pega o valor da moeda estrageira
 
-    return price * exchange_rate # faz o calculo entre a moeda estrageira com o valor da moeda selecionada
+    # calcula o valor convertido e retorna junto com a moeda de destino, para poder identificar cada resultado quando várias conversões rodam em paralelo
+    return {"to_currency": to_currency, "converted_value": price * exchange_rate}
