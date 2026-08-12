@@ -48,8 +48,8 @@ async def async_converter_router(
 
 # rota v2: mesma conversão em paralelo, mas recebendo "to_currencies" e "price" pelo body em vez de query params
 # "response_model=ConverterOutput" valida e formata a resposta conforme o schema definido em schamas.py
-@router.get("/async/v2/{from_currency}",response_model=ConverterOutput)
-async def async_converter_router_v2(
+@router.get("/async/body/{from_currency}",response_model=ConverterOutput)
+async def async_converter_router_body(
                                   body: ConverterInput,
                                   from_currency: str = Path(max_length=3, pattern='^[A-Z]{3}$'),
 
